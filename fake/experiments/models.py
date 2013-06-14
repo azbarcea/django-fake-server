@@ -21,3 +21,15 @@ class Test(models.Model):
     def duration(self):
         return 0 if self.start_date is None else timezone.now() - self.start_date
 
+class Protocol(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.name
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    
+    def __unicode__(self):  # Python 3: def __str__(self):
+        return self.name

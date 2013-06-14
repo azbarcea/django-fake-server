@@ -20,5 +20,6 @@ def tests(request):
     'weight_left': str(o.weight_left) + ' g',
     'weight_right': str(o.weight_right) + ' g',
     'history': o.history,
+    'duration': str(o.duration().days) + 'd ' + str(o.duration().seconds // 3600) + 'h ' + str(o.duration().seconds // 60 % 60) + 'm',
   } for o in Test.objects.all()]}, "tests" )
   return HttpResponse(output, mimetype="application/json")
